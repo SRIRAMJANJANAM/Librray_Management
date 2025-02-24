@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+   
+</head>
+<body bgcolor="#bbb">
+    <div id="main" align="center">
+        <h1>Students</h1>
+        
+    </div>
+    
+    {% if students%}
+    <div id="student">
+        
+    <div class="student">
+        
+        <table border align="center">
+            <thead>
+                <th>Name</th>
+                <th>Class</th>
+                <th>Photo</th>
+                <th>Video</th>
+            </thead>
+            <tr>
+                {% for student in students %}
+                <td>{{student.name}}</td>
+                <td>{{student.Class}}</td>
+                <td>
+                    <img src="{{ student.photo.url }}" width="20%">
+                </td>
+                <td>
+                    <video src="{{ student.video.url }}" controls width="80%" autoplay height="150vw"></video>
+                </td>
+                
+                <td style=" border: 0;">
+        <a href="{% url 'student_edit' student.id %}">Edit</a> | 
+        <a href="{% url 'student_delete' student.id %}" onclick="return confirm('Are you sure?')">Delete</a>
+    </td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+    
+    </div>
+    {% else %}
+    <h1 align="center" style="color: rgb(98, 0, 255);">No Students Found</h1>
+    {% endif %}
+</body>
+</html>

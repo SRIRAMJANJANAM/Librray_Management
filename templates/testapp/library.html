@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+{%load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+</head>
+<body bgcolor="#bbb">
+    <div id="main" align="center">
+        <h1>Library</h1>
+    </div>
+    {% if libraries%}
+    <div id="student">
+    <div class="student">
+        <table border align="center">
+            <thead>
+                <th>Student Name</th>
+                <th>Book Name</th>
+                <th>Start Date</th>
+                <th>End Date</th>
+            </thead>
+            <tr>
+                {% for library in libraries %}
+                <td>{{library.studentname}}</td>
+                <td>{{library.bookname}}</td>
+                <td>
+                    {{library.start_date}}
+                </td>
+                <td>{{library.end_date}}</td>
+                <td>
+                    <a href="{% url 'library_edit' library.id %}">Edit</a> | 
+                    <a href="{% url 'library_delete' library.id %}" onclick="return confirm('Are you sure?')">Delete</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+    </div>
+    {% else %}
+    <h1 align="center" style="color: red;">Nothing Found</h1>
+    {% endif %}
+</body>
+</html>

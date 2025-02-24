@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Form</title>
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <style>
+        #form-container {
+            opacity: 0;
+            transition: opacity 1s;
+        }
+        #form-container.show {
+            opacity: 2;
+        }
+    </style>
+</head>
+<body>
+    <div id="main" align="center">
+        <h1>Student Form</h1>
+    </div>
+    <div align="center" id="form-container">
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Submit</button>
+            <input type="reset" value="Cancel">
+        </form>
+    </div>
+
+    <script>
+        setTimeout(function() {
+            document.getElementById("form-container").classList.add("show");
+        }, 1000); // 2000 milliseconds = 2 seconds
+    </script>
+</body>
+</html>
