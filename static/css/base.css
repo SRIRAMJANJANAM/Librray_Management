@@ -1,9 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Bebas+Neue&family=Gotu&family=IBM+Plex+Sans+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Lexend+Giga:wght@100..900&family=Lilita+One&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto+Slab:wght@100..900&family=Smooch+Sans:wght@100..900&display=swap');
-body{
-    background-image: url('https://media.istockphoto.com/id/873620756/photo/library-stacks-of-books-and-bookshelf.jpg?s=612x612&w=0&k=20&c=nMJatwNMa5NEFNREj6MFMDgl4DT773CO3BeCFK4Q0y8=');
-    background-repeat: no-repeat;
-    background-size: cover;
-}
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Sigmar&display=swap');
 form{
     display: flex;
     flex-direction: column;
@@ -13,9 +9,9 @@ form{
     padding: 2vw;
     border-radius: 10px;
     font-size: 2vw;
-    color: green;
-    background-color: antiquewhite;
+    color: black;
     background-image: none;
+    
 }
 form, button,input[type=reset],input,label,p,select{
     background-image: none;
@@ -33,58 +29,75 @@ button,input[type=reset]{
 }
 
 input{
-    width: 20vw;
+    width: 25vw;
     border: 0;
-    border-bottom: 1px solid red;
+    border-bottom: 2.5px solid red;
     text-align: center;
     outline: 0;
     font-size: 1.3vw;
-    background-color: antiquewhite;
+    background-color: rgb(18, 208, 255);
+    color: red;
+    font-family: "Sigmar", sans-serif;
+    padding: 10px;
 }input[type=file]{
     border: 0;
 }
 table{
-    background-color: antiquewhite;
     color: white;
     padding: 10px;
     border-radius: 10px;
-    border: 1px solid red;
+    border: 1px solid white;
     justify-content: space-between;
+    width: 80%;
 }
 th{
-    color: red;
+    color: rgb(0, 245, 41);
     padding: 10px;
     font-family: 'Times New Roman', Times, serif;
     font-size: 2vw;
+    background-color: black;
+
 }
 td{
     text-align: center;
     font-size: 1.5vw;
     color: black;
     padding: 5px;
+    background-color: rgb(18, 208, 255);
+    font-family: "Barlow Condensed", serif;
+    border-radius: 10px;
+    padding: 10px;
+}
+td img{
+    border-radius: 5%;
+    width: 80px;
 }
 a{
     color: red;
     font-size: 1.6vw;
-    text-decoration: none;
     font-family: serif;
     text-decoration: underline;
     border: 0;
 }
 select{
     width: 20vw;
-    background-color: black;
+    background-color: rgb(18, 208, 255);
     text-align: center;
     color:  red;
     font-size: 1.5vw;
-    border: 0;
     border-radius: 10px;
+    border: 1px solid red;
+    padding: 2px;
+}
+option{
+    text-align: center;
 }
 h1{
-    color: #8E0E00;
+    color: white;
     font-family: "Barlow Condensed", serif;
     font-size: 3vw;
     text-decoration: underline;
+    margin-top: 2.5vw;
 }
 #form-container {
     opacity: 0;
@@ -92,4 +105,18 @@ h1{
 }
 #form-container.show {
     opacity: 2;
+}
+p{
+    background-color: rgb(18, 208, 255);
+    padding: 1vw;
+    font-family: "Montserrat", sans-serif;
+    border-radius: 10px;
+}
+@keyframes lights {
+    0%{
+        color: red;
+    }
+    50%{
+        color: blue;
+    }
 }

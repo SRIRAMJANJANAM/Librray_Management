@@ -6,6 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <style>
+       body{
+    background-image: url('{% static 'images/bg.jpg' %}');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+    </style>
    
 </head>
 <body bgcolor="#bbb">
@@ -19,7 +26,7 @@
         
     <div class="student">
         
-        <table border align="center">
+        <table border align="center" width="80%">
             <thead>
                 <th>Name</th>
                 <th>Class</th>
@@ -30,15 +37,15 @@
                 {% for student in students %}
                 <td>{{student.name}}</td>
                 <td>{{student.Class}}</td>
-                <td>
-                    <img src="{{ student.photo.url }}" width="20%">
+                <td >
+                    <img src="{{ student.photo.url }}" width="10%">
                 </td>
                 <td>
-                    <video src="{{ student.video.url }}" controls width="80%" autoplay height="150vw"></video>
+                    <video src="{{ student.video.url }}" controls autoplay height="180vw"></video>
                 </td>
                 
                 <td style=" border: 0;">
-        <a href="{% url 'student_edit' student.id %}">Edit</a> | 
+        <a href="{% url 'student_edit' student.id %}">Edit</a> |
         <a href="{% url 'student_delete' student.id %}" onclick="return confirm('Are you sure?')">Delete</a>
     </td>
             </tr>
